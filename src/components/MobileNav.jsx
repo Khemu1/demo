@@ -1,6 +1,15 @@
 import { useState } from "react";
 import "../App.css";
 import "../index.css";
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerTrigger,
+  DrawerHeader,
+  DrawerDescription,
+} from "../components/ui/drawer";
+
 const MobileNav = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedFlag, setSelectedFlag] = useState("🇸🇦");
@@ -13,11 +22,12 @@ const MobileNav = () => {
   };
 
   return (
-    <nav className="block lg:hidden">
+    <nav className="block md:hidden">
       <div className="flex justify-between items-center">
+        <ActionButton label="ادخل" />
+
         <div className="flex items-center cursor-pointer">
           <Icon />
-          <Logo />
         </div>
         <div className="flex items-center gap-8">
           <p className="_text_1oddo_22 blue-under-text">تسوق</p>
@@ -25,10 +35,10 @@ const MobileNav = () => {
             <button className="h-[40px] min-w-[40px] w-[40px] transition-all duration-[400ms] hover:bg-[#FFFFFF33] rounded-md flex justify-center items-center cursor-pointer">
               <Stats />
             </button>
-            <div className="relative">
+            <div className="flex gap-1 relative">
               <button
                 onClick={toggleDropdown}
-                className="transition-all duration-[400ms] border-2 border-[#2b2f32]  rounded-md flex justify-center items-center cursor-pointer gap-2 py-[9px] px-[10px] group"
+                className="transition-all duration-[400ms]   rounded-md flex justify-center items-center cursor-pointer gap-2 py-[9px] px-[10px] group"
                 style={{
                   borderRadius: "40px",
                 }}
@@ -40,7 +50,7 @@ const MobileNav = () => {
               </button>
 
               {isOpen && (
-                <div className="absolute left-0 mt-2 w-[208px] bg-[#161c29]   shadow-md max-h-[232px] p-1 rounded-lg">
+                <div className="absolute  left-0 top-8  mt-2 w-[208px] bg-[#161c29]   shadow-md max-h-[232px] p-1 rounded-lg">
                   <button
                     onClick={() => selectFlag("🇰🇼")}
                     className={`px-4 py-3 rounded-lg flex w-full justify-between items-center ${
@@ -67,9 +77,49 @@ const MobileNav = () => {
                   </button>
                 </div>
               )}
+              <Drawer direction="left">
+                <DrawerTrigger>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    width="24"
+                    height="24"
+                    role="img"
+                  >
+                    <g fill="white" clipPath="url(#clip0_1_7)">
+                      <path d="M5 7a1 1 0 0 0 0 2h14a1 1 0 1 0 0-2zM5 15a1 1 0 1 0 0 2h14a1 1 0 1 0 0-2z"></path>
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_1_7">
+                        <path fill="#fff" d="M0 0h24v24H0z"></path>
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </DrawerTrigger>
+
+                <DrawerContent>
+                  <DrawerHeader>
+                    <DrawerClose className="flex justify-end">
+                      <img src="public\closeIcon.svg" alt="close" />
+                    </DrawerClose>
+                  </DrawerHeader>
+                  <DrawerDescription className="flex flex-col items-center p-[24px]">
+                    <div className="relative w-[48px] h-[48px]">
+                      <img
+                        src="public\images\avatarIcon.60650c40.png"
+                        alt=""
+                        className="w-full h-full absolute"
+                      />
+                    </div>
+                    <span className="mt-[16px] mb-[20px] font-semibold !text-[var(--color-text-basic-main] !text-[var(--typography-heading-small)]">
+                      حياكم الله! رحلة التفوق تبدأ هنا
+                    </span>
+                  </DrawerDescription>
+                </DrawerContent>
+              </Drawer>
             </div>
           </div>
-          <ActionButton label="ادخل" />
         </div>
       </div>
     </nav>
@@ -85,33 +135,6 @@ const ActionButton = ({ label }) => (
     <p>{label}</p>
     <Enter />
   </button>
-);
-
-const Logo = () => (
-  <svg
-    height="1em"
-    viewBox="0 0 64 12"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className=" w-[74px] h-[14px]"
-  >
-    <path
-      d="M58.1651 0C57.5881 0 57.0817 0.116807 56.6666 0.376653C56.2395 0.639108 55.9325 1.08668 55.724 1.66435L52.1905 11.4775C52.1481 11.5952 52.1616 11.7282 52.2264 11.8328C52.2913 11.9374 52.3991 12 52.5145 12H54.4527C54.5957 12 54.7243 11.904 54.7767 11.758L57.9648 2.88424C57.9933 2.81442 58.0215 2.78509 58.0397 2.7716C58.0573 2.75853 58.0884 2.74318 58.1501 2.74318C58.2123 2.74318 58.2399 2.75865 58.2529 2.76859C58.2665 2.779 58.2919 2.80481 58.3171 2.87453L58.3178 2.87646L61.3727 11.7528C61.4238 11.9016 61.5536 12 61.6985 12H63.6517C63.7662 12 63.8734 11.9383 63.9384 11.8348C64.0034 11.7314 64.018 11.5996 63.9773 11.4821L60.5785 1.67082C60.3796 1.08922 60.0715 0.639416 59.6337 0.376575C59.2278 0.116372 58.731 0 58.1651 0Z"
-      fill="currentColor"
-    ></path>
-    <path
-      d="M0.348346 0.196258C0.15596 0.196258 0 0.36734 0 0.57838V8.10159C0 9.33394 0.285176 10.3281 0.916294 11.0109C1.54652 11.6927 2.46266 12 3.59856 12H5.71567C6.85224 12 7.77012 11.691 8.40483 11.0074C9.04069 10.3226 9.32914 9.33015 9.32914 8.10159V0.57838C9.32914 0.36734 9.17318 0.196258 8.98079 0.196258H7.25132C7.05893 0.196258 6.90297 0.36734 6.90297 0.57838V7.9544C6.90297 8.4414 6.7871 8.76457 6.60025 8.97864C6.42299 9.17139 6.11349 9.30589 5.59639 9.30589H3.80729C3.26868 9.30589 2.9518 9.1705 2.7759 8.9811C2.59761 8.76735 2.4858 8.44292 2.4858 7.9544V0.57838C2.4858 0.36734 2.32984 0.196258 2.13745 0.196258H0.348346Z"
-      fill="currentColor"
-    ></path>
-    <path
-      d="M18.5737 0.196258C18.3813 0.196258 18.2254 0.36734 18.2254 0.57838V8.10159C18.2254 9.33394 18.5105 10.3281 19.1417 11.0109C19.7719 11.6927 20.688 12 21.8239 12H23.941C25.0776 12 25.9955 11.691 26.6302 11.0074C27.2661 10.3226 27.5545 9.33015 27.5545 8.10159V0.57838C27.5545 0.36734 27.3985 0.196258 27.2062 0.196258H25.4767C25.2843 0.196258 25.1283 0.36734 25.1283 0.57838V7.9544C25.1283 8.44141 25.0125 8.76457 24.8256 8.97864C24.6483 9.17139 24.3388 9.30589 23.8218 9.30589H22.0327C21.4941 9.30589 21.1772 9.1705 21.0013 8.98111C20.823 8.76736 20.7112 8.44292 20.7112 7.9544V0.57838C20.7112 0.36734 20.5552 0.196258 20.3628 0.196258H18.5737Z"
-      fill="currentColor"
-    ></path>
-    <path
-      d="M36.7693 0.196258C36.5769 0.196258 36.4209 0.36734 36.4209 0.57838V7.80721C36.4209 8.39576 36.4893 8.94597 36.6296 9.45514L36.6305 9.45828C36.6312 9.46066 36.6319 9.46303 36.6326 9.4654C36.7878 9.97613 37.0333 10.424 37.3688 10.8042C37.7077 11.1884 38.1357 11.4838 38.6425 11.6967C38.6453 11.6978 38.648 11.699 38.6508 11.7C39.1749 11.9037 39.7879 12 40.4817 12H44.4922C44.6846 12 44.8406 11.8289 44.8406 11.6179V9.68801C44.8406 9.47697 44.6846 9.30589 44.4922 9.30589H40.586C40.213 9.30589 39.9206 9.25963 39.6992 9.17901C39.4792 9.09522 39.3181 8.99043 39.2032 8.87369C39.086 8.74385 39.0032 8.59757 38.9515 8.43205C38.9021 8.22976 38.8769 8.01641 38.8769 7.79085V0.57838C38.8769 0.36734 38.7209 0.196258 38.5285 0.196258H36.7693Z"
-      fill="currentColor"
-    ></path>
-  </svg>
 );
 
 const Icon = () => (

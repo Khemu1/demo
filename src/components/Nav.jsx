@@ -13,7 +13,7 @@ const Nav = () => {
   };
 
   return (
-    <nav className="hidden lg:block">
+    <nav className="hidden md:block">
       <div className="flex justify-between items-center">
         <div className="flex items-center cursor-pointer">
           <Icon />
