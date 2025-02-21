@@ -1,5 +1,340 @@
 @import "tailwindcss";
 
+:root {
+  --color-vector-basic-tertiary: rgba(146, 151, 166, 0.6);
+  --color-border-basic-focused: rgba(32, 114, 224, 0.4);
+  --color-border-accent-focused-error: rgba(231, 29, 54, 0.2);
+  --utility-opacity-darken-08: rgba(7, 9, 13, 0.8);
+  --utility-opacity-lighten-012: hsla(0, 0%, 100%, 0.12);
+  --utility-opacity-darken-04: rgba(7, 9, 13, 0.4);
+  --utility-opacity-darken-02: rgba(7, 9, 13, 0.2);
+  --utility-opacity-darken-06: rgba(7, 9, 13, 0.6);
+  --utility-opacity-lighten-06: hsla(0, 0%, 100%, 0.6);
+  --utility-opacity-darken-012: rgba(7, 9, 13, 0.12);
+  --utility-opacity-lighten-04: hsla(0, 0%, 100%, 0.4);
+  --utility-opacity-lighten-08: hsla(0, 0%, 100%, 0.8);
+  --utility-opacity-lighten-02: hsla(0, 0%, 100%, 0.2);
+  --color-text-basic-tertiary: rgba(146, 151, 166, 0.6);
+  --utility-blur-5: rgba(15, 18, 23, 0.85);
+  --utility-blur-10: rgba(18, 22, 31, 0.85);
+  --color-background-accent-positive: #13ac54;
+  --color-background-accent-info-high: #9bdbf6;
+  --color-background-accent-info: #69c9f2;
+  --color-background-accent-info-low: #2186b1;
+  --color-background-accent-caution-high: #ff9745;
+  --color-background-accent-caution: #fc8224;
+  --color-background-accent-caution-low: #9b4400;
+  --color-background-accent-positive-high: #17cf63;
+  --color-background-accent-positive-low: #1b693d;
+  --color-background-accent-negative-high: #eb475b;
+  --color-background-accent-negative: #e71d36;
+  --color-background-accent-negative-low: #a11123;
+  --color-background-brand-primary-low: #194d91;
+  --color-background-brand-primary-high: #4190ed;
+  --color-background-brand-primary: #2072e0;
+  --color-background-elevation-0: #000;
+  --color-background-elevation-2: #12161f;
+  --color-background-elevation-3: #161c29;
+  --color-background-elevation-1: #0f1217;
+  --color-background-elevation-4: #1b2130;
+  --color-background-elevation-5: #212839;
+  --color-background-elevation-bg-inverted: #fafbff;
+  --color-background-special-01: #ffcf24;
+  --color-background-special-02: #2ba5d9;
+  --color-background-special-03: #6c1eea;
+  --color-vector-accent-info: #69c9f2;
+  --color-vector-accent-caution: #fc8224;
+  --color-vector-accent-positive: #13ac54;
+  --color-vector-accent-negative: #e71d36;
+  --color-vector-basic-secondary: #a1a6b2;
+  --color-vector-basic-main-inverted: #1b2130;
+  --color-vector-basic-main: #fafbff;
+  --color-vector-brand-primary-high: #4190ed;
+  --color-vector-brand-primary: #2072e0;
+  --color-vector-brand-primary-low: #194d91;
+  --color-vector-special-01: #ffcf24;
+  --color-vector-special-02: #2ba5d9;
+  --color-vector-special-03: #6c1eea;
+  --color-border-accent-caution-low: #9b4400;
+  --color-border-accent-info-high: #9bdbf6;
+  --color-border-basic-ghost-high: rgba(250, 251, 255, 0.12);
+  --color-border-accent-negative: #e71d36;
+  --color-border-basic-active-low: #194d91;
+  --color-border-basic-disabled: rgba(161, 166, 178, 0.2);
+  --color-border-basic-default: rgba(146, 151, 166, 0.8);
+  --color-border-accent-caution: #fc8224;
+  --color-border-accent-caution-high: #ff9745;
+  --color-border-basic-ghost: #161c29;
+  --color-border-accent-positive-low: #1b693d;
+  --color-border-accent-positive: #13ac54;
+  --color-border-accent-positive-high: #17cf63;
+  --color-border-accent-negative-high: #eb475b;
+  --color-border-accent-negative-low: #a11123;
+  --color-border-basic-active-high: #4190ed;
+  --color-border-accent-info: #69c9f2;
+  --color-border-accent-info-low: #2186b1;
+  --color-border-basic-active: #2072e0;
+  --color-text-accent-positive: #13ac54;
+  --color-text-accent-caution: #fc8224;
+  --color-text-accent-negative: #e71d36;
+  --color-text-accent-positive-low: #1b693d;
+  --color-text-accent-positive-high: #17cf63;
+  --color-text-accent-negative-low: #a11123;
+  --color-text-basic-main-inverted: #1b2130;
+  --color-text-basic-action-low: #194d91;
+  --color-text-basic-action-high: #4190ed;
+  --color-text-basic-action: #2072e0;
+  --color-text-accent-info-low: #2186b1;
+  --color-text-accent-info-high: #9bdbf6;
+  --color-text-accent-negative-high: #eb475b;
+  --color-text-accent-info: #69c9f2;
+  --color-text-accent-caution-high: #ff9745;
+  --color-text-basic-secondary: #a1a6b2;
+  --color-text-accent-caution-low: #9b4400;
+  --color-text-basic-main: #fafbff;
+  --color-text-special-03: #6c1eea;
+  --color-vector-basic-low: #0f1217;
+  --color-background-special-04: #031537;
+  --color-vector-accent-positive-high: #17cf63;
+  --color-vector-accent-positive-low: #1b693d;
+  --color-vector-accent-caution-high: #ff9745;
+  --color-vector-accent-caution-low: #9b4400;
+  --color-vector-brand-primary-shade: #0e3164;
+  --color-background-special-05: #451291;
+  --utility-opacity-lighten-008: hsla(0, 0%, 100%, 0.08);
+  --color-background-special-06: rgba(255, 140, 50, 0.12);
+  --color-background-special-07: rgba(33, 134, 177, 0.2);
+  --color-background-special-08: rgba(23, 207, 99, 0.16);
+  --color-text-special-02: #2ba5d9;
+  --utility-opacity-darken-00: rgba(7, 9, 13, 0);
+  --utility-shadow-lower: rgba(0, 0, 0, 0.25);
+  --utility-shadow-main: rgba(0, 0, 0, 0.4);
+  --utility-shadow-higher: rgba(0, 0, 0, 0.8);
+  --opacity-02: 20%;
+  --opacity-04: 40%;
+  --opacity-08: 80%;
+  --gradient-ondark-gradient-special-01: linear-gradient(
+    135deg,
+    #0e3995,
+    #031537
+  );
+  --gradient-ondark-gradient-special-02: linear-gradient(
+    225deg,
+    #031537,
+    #6c1eea 148%
+  );
+  --gradient-ondark-gradient-special-03: linear-gradient(
+    90deg,
+    #17cf63,
+    #176688
+  );
+  --gradient-ondark-gradient-special-04: linear-gradient(
+    90deg,
+    #ff9745,
+    #e16a14
+  );
+  --gradient-ondark-gradient-progress-linear: linear-gradient(
+    -90deg,
+    #69c9f2,
+    #2072e0
+  );
+  --gradient-ondark-gradient-overlay-04-0: linear-gradient(
+    90deg,
+    rgba(7, 9, 13, 0) 44%,
+    rgba(7, 9, 13, 0.2)
+  );
+  --gradient-ondark-gradient-overlay-06-90: linear-gradient(
+    180deg,
+    rgba(7, 9, 13, 0) 44%,
+    rgba(7, 9, 13, 0.2)
+  );
+  --radius-xs: 4px;
+  --radius-s: 8px;
+  --radius-sm: 12px;
+  --radius-m: 24px;
+  --radius-l: 32px;
+  --radius-full: 100%;
+  --radius-md: 16px;
+  --radius-xl: 64px;
+  --spacing-0x: 0px;
+  --spacing-05x: 2px;
+  --spacing-1x: 4px;
+  --spacing-2x: 8px;
+  --spacing-3x: 12px;
+  --spacing-4x: 16px;
+  --spacing-5x: 20px;
+  --spacing-6x: 24px;
+  --spacing-7x: 28px;
+  --spacing-8x: 32px;
+  --spacing-9x: 36px;
+  --spacing-10x: 40px;
+  --spacing-12x: 48px;
+  --spacing-15x: 60px;
+  --spacing-16x: 64px;
+  --spacing-20: 80px;
+  --spacing-25x: 100px;
+  --spacing-30x: 120px;
+  --spacing-31x: 124px;
+  --typography-link-body-calm: 400 17px/32px "UULA Sans", -apple-system,
+    system-ui, Arial, sans-serif;
+  --typography-link-caption-calm: 500 15px/28px "UULA Sans", -apple-system,
+    system-ui, Arial, sans-serif;
+  --typography-link-caption: 500 15px/28px "UULA Sans", -apple-system, system-ui,
+    Arial, sans-serif;
+  --typography-link-caption-small: 500 13px/24px "UULA Sans", -apple-system,
+    system-ui, Arial, sans-serif;
+  --typography-link-caption-small-calm: 500 13px/24px "UULA Sans", -apple-system,
+    system-ui, Arial, sans-serif;
+  --typography-link-body: 400 17px/32px "UULA Sans", -apple-system, system-ui,
+    Arial, sans-serif;
+  --typography-caption-numeric: 500 10px/20px "UULA Sans", -apple-system,
+    system-ui, Arial, sans-serif;
+  --typography-caption-medium: 500 15px/28px "UULA Sans", -apple-system,
+    system-ui, Arial, sans-serif;
+  --typography-caption-small: 500 13px/24px "UULA Sans", -apple-system,
+    system-ui, Arial, sans-serif;
+  --typography-caption-extra-small: 500 11px/20px "UULA Sans", -apple-system,
+    system-ui, Arial, sans-serif;
+  --typography-heading-extra-large: 700 54px/96px "UULA Sans", -apple-system,
+    system-ui, Arial, sans-serif;
+  --typography-heading-large: 700 48px/84px "UULA Sans", -apple-system,
+    system-ui, Arial, sans-serif;
+  --typography-heading-medium: 700 37px/64px "UULA Sans", -apple-system,
+    system-ui, Arial, sans-serif;
+  --typography-heading-regular: 700 25px/44px "UULA Sans", -apple-system,
+    system-ui, Arial, sans-serif;
+  --typography-heading-small: 700 21px/36px "UULA Sans", -apple-system,
+    system-ui, Arial, sans-serif;
+  --typography-subheading-small: 500 17px/32px "UULA Sans", -apple-system,
+    system-ui, Arial, sans-serif;
+  --typography-subheading-regular: 500 19px/36px "UULA Sans", -apple-system,
+    system-ui, Arial, sans-serif;
+  --typography-subheading-medium: 500 25px/44px "UULA Sans", -apple-system,
+    system-ui, Arial, sans-serif;
+  --typography-subheading-large: 500 32px/56px "UULA Sans", -apple-system,
+    system-ui, Arial, sans-serif;
+  --typography-body-regular: 400 17px/32px "UULA Sans", -apple-system, system-ui,
+    Arial, sans-serif;
+  --typography-focus-small: 700 13px/24px "UULA Sans", -apple-system, system-ui,
+    Arial, sans-serif;
+  --typography-focus-large: 700 17px/32px "UULA Sans", -apple-system, system-ui,
+    Arial, sans-serif;
+  --typography-focus-medium: 700 15px/28px "UULA Sans", -apple-system, system-ui,
+    Arial, sans-serif;
+  --shadow-ondark-elevation-main: 0px 4px 12px 0px rgba(0, 0, 0, 0.4);
+  --shadow-ondark-elevation-lower: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  --shadow-ondark-elevation-upper: 0px 4px 100px 0px rgba(0, 0, 0, 0.8);
+  --shadow-border-outline-0: 0px 0px 10px 0px rgba(32, 114, 224, 0.3),
+    0px 0px 4px 0px rgba(42, 201, 222, 0.3);
+  --palette-blue-350: #2072e0;
+  --palette-blue-200: #194d91;
+  --palette-blue-000: #0f1b34;
+  --palette-blue-100: #091c40;
+  --palette-blue-150: #0e3164;
+  --palette-orange-200: #9b4400;
+  --palette-orange-300: #e16a14;
+  --palette-orange-150: #793500;
+  --palette-orange-100: #552805;
+  --palette-green-300: #13ac54;
+  --palette-grey-300: #9297a6;
+  --palette-grey-400: #a1a6b2;
+  --palette-grey-950: #fafbff;
+  --palette-grey-999: #fff;
+  --palette-grey-050: #1b2130;
+  --palette-grey-000: #000;
+  --palette-grey-040: #161c29;
+  --palette-grey-030: #12161f;
+  --palette-grey-020: #0f1217;
+  --palette-grey-060: #212839;
+  --palette-grey-010: #07090d;
+  --palette-cyan-200: #176688;
+  --palette-cyan-250: #2186b1;
+  --palette-cyan-300: #2ba5d9;
+  --palette-cyan-150: #0d475f;
+  --palette-cyan-000: #0f2433;
+  --palette-cyan-100: #1e252e;
+  --palette-purple-350: #6c1eea;
+  --palette-purple-200: #320c64;
+  --palette-purple-050: #190d39;
+  --palette-purple-250: #451291;
+  --palette-yellow-650: #ffcf24;
+  --palette-red-250: #eb475b;
+  --palette-red-200: #e71d36;
+  --palette-red-150: #a11123;
+  --palette-purple-650: #dac7fa;
+  --palette-purple-550: #c8abf7;
+  --palette-purple-500: #b68ff4;
+  --palette-purple-450: #9156ef;
+  --palette-purple-400: #7934e9;
+  --palette-purple-150: #2c0e4b;
+  --palette-purple-100: #221e2e;
+  --palette-blue-750: #cbe0fa;
+  --palette-blue-600: #b1d1f8;
+  --palette-blue-500: #96c2f5;
+  --palette-blue-450: #62a3f0;
+  --palette-blue-400: #4190ed;
+  --palette-blue-050: #1a2233;
+  --palette-cyan-050: #032736;
+  --palette-cyan-800: #cdedfb;
+  --palette-cyan-700: #b4e4f9;
+  --palette-cyan-650: #9bdbf6;
+  --palette-cyan-500: #69c9f2;
+  --palette-cyan-450: #52bae7;
+  --palette-cyan-400: #37b7ee;
+  --palette-orange-750: #ffc69a;
+  --palette-orange-700: #ffb77e;
+  --palette-orange-550: #ffa864;
+  --palette-orange-450: #ff9745;
+  --palette-orange-400: #ff8c32;
+  --palette-orange-350: #fc8224;
+  --palette-orange-250: #cb5901;
+  --palette-orange-050: #40230d;
+  --palette-orange-000: #27221e;
+  --palette-green-800: #d9ecc6;
+  --palette-green-000: #222525;
+  --palette-blue-300: #116ad1;
+  --palette-blue-250: #125cb8;
+  --palette-green-700: #c4e4a5;
+  --palette-green-600: #a1db85;
+  --palette-green-500: #88d364;
+  --palette-green-450: #6eca43;
+  --palette-green-350: #4dbb4c;
+  --palette-green-250: #16964c;
+  --palette-green-200: #187f44;
+  --palette-green-050: #113020;
+  --palette-green-150: #1b693d;
+  --palette-green-100: #154229;
+  --palette-purple-000: #160c31;
+  --palette-purple-300: #6022c5;
+  --palette-blue-075: #031537;
+  --palette-blue-175: #0e3995;
+  --palette-green-475: #17cf63;
+  --uula-color-focus-border: var(--color-border-basic-active);
+  --uula-color-focus-outline: var(--color-border-basic-focused);
+  --uula-color-focus-border-error: var(--color-border-accent-negative);
+  --uula-color-focus-outline-error: var(--color-border-accent-focused-error);
+  --uula-scrollbar-main-background: transparent;
+  --uula-scrollbar-main-thumb-color: var(--color-background-elevation-4);
+  --uula-scrollbar-dark-background: transparent;
+  --uula-scrollbar-dark-thumb-color: var(--color-background-elevation-1);
+  --uula-input-base-height: 56px;
+  --uula-header-height: 50px;
+  --uula-header-link-underline-color: #2072e0;
+  --spacing-16: 64px;
+  --spacing-1x: 4px;
+  --spacing-2x: 8px;
+  --uula-grid-padding: calc(var(--spacing-16) + var(--spacing-1x));
+  --uula-button-background: #2072e0;
+  --uula-accordion-item-color: #161c29;
+  --uula-button-accessory-hover: #2072e0;
+}
+@theme {
+  --radius: 20px;
+  --borderRadius-xl: calc(var(--radius) + 6px);
+  --borderRadius-lg: var(--radius);
+  --borderRadius-md: calc(var(--radius) - 2px);
+  --borderRadius-sm: calc(var(--radius) - 4px);
+}
 .styles_layoutContentRoot__EffBd {
   z-index: 2;
   display: flex;
