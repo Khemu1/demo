@@ -506,7 +506,7 @@ const MoreAmuseImage = ({ svg, text }) => (
 );
 
 const FreeTrials = () => (
-  <section className="flex flex-col items-center pt-[60px] pb-[20px] px-[12px] w-full gap-14 w-full px-[64px] ">
+  <section className="flex flex-col items-center pt-[60px] pb-[20px] px-[12px] w-full gap-14 w-full  px-[16px] lg:px-[64px] ">
     <h3
       className="text-3xl mb-[64px]"
       style={{ font: "var(--typography-heading-medium)" }}
