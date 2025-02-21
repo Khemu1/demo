@@ -407,13 +407,11 @@ nav {
   margin: 0 auto;
   backdrop-filter: blur(15px);
 }
-
 nav > :nth-child(1) {
   margin-inline: auto;
-  max-width: 1360px;
-  min-width: 360px;
-  padding-inline: var(--uula-grid-padding);
-  padding-block: 20px;
+
+  padding-inline: 32px;
+  padding-block: 5px;
 }
 
 .LogoIcon_logo__Yu6Ww {
@@ -664,6 +662,14 @@ rtl .styles_discountSection__GBHoL .styles_advertTextAfter__IMJvO {
   .styles_discountSection__GBHoL,
   .styles_advertTextBefore__kKt8v {
     font-size: 44px;
+  }
+
+  nav > :nth-child(1) {
+    margin-inline: auto;
+    max-width: 1360px;
+    min-width: 360px;
+    padding-inline: var(--uula-grid-padding);
+    padding-block: 20px;
   }
 }
 

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "../App.css";
 import "../index.css";
-const Nav = () => {
+const MobileNav = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedFlag, setSelectedFlag] = useState("🇸🇦");
 
@@ -13,7 +13,7 @@ const Nav = () => {
   };
 
   return (
-    <nav className="hidden lg:block">
+    <nav className="block lg:hidden">
       <div className="flex justify-between items-center">
         <div className="flex items-center cursor-pointer">
           <Icon />
@@ -213,4 +213,4 @@ const DownArrow = () => (
   </svg>
 );
 
-export default Nav;
+export default MobileNav;
