@@ -637,7 +637,7 @@ const Dropdown = ({ title, text }) => {
 
   return (
     <div
-      className="transition-all flex flex-col duration-400 bg-[var(--uula-accordion-item-color)]"
+      className="transition-all flex flex-col items-start duration-400 bg-[var(--uula-accordion-item-color)]"
       style={{
         borderRadius: "8px",
       }}
